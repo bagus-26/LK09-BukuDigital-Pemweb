@@ -1,66 +1,59 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# BukuDigital - Sistem Manajemen Literatur
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Nama:** Bagus Artandyo Witjaksono
+**Nim:** 24102029
+**Matkul:** Pemograman Web
+**Dosen Pengampu**: Ahsanun Naseh Khudori, S.Kom., M.Kom
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+BukuDigital adalah aplikasi berbasis web untuk mengelola arsip dan literatur perpustakaan dengan mudah. Aplikasi ini menyediakan antarmuka pengguna yang bersih dan modern untuk melakukan operasi CRUD (Create, Read, Update, Delete) pada data buku.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Berikut adalah penjelasan mengenai alur penggunaan aplikasi berdasarkan antarmuka yang tersedia:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Alur Aplikasi
 
-## Learning Laravel
+### 1. Halaman Utama: Koleksi Literatur
+![Halaman Koleksi Literatur](docs/koleksi-literatur.png)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Halaman ini merupakan beranda utama aplikasi (`/books`) yang menampilkan seluruh daftar koleksi buku yang telah tersimpan di dalam database.
+- **Tampilan Grid**: Buku-buku ditampilkan dalam bentuk kartu (card) yang berisi informasi cover buku, label klasifikasi (contoh: Fiksi), judul, penulis, dan tahun terbit.
+- **Fitur Pencarian**: Terdapat form pencarian di bagian atas untuk memudahkan pengguna mencari buku berdasarkan judul atau penulis.
+- **Aksi Cepat**: Pada setiap kartu buku terdapat tombol aksi untuk melihat detail (ikon mata) dan mengubah data (ikon pensil).
+- **Tambah Data**: Tombol "Tambah Data" di pojok kanan atas digunakan untuk memasukkan buku baru ke dalam sistem.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 2. Menambah Data Buku Baru (Tambah Arsip)
+![Form Tambah Arsip](docs/tambah-arsip.png)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Ketika pengguna menekan tombol "Tambah Data", mereka akan diarahkan ke halaman **Tambah Arsip**.
+- Formulir ini digunakan untuk memasukkan informasi literatur ke dalam database.
+- Terdapat beberapa field wajib yang harus diisi, seperti:
+  - Judul Lengkap
+  - Penulis
+  - Penerbit
+  - Tahun Terbit
+  - Klasifikasi (Pilihan Kategori)
+  - Catatan / Sinopsis
+- Pengguna juga dapat mengunggah gambar cover buku untuk melengkapi data arsip.
 
-## Laravel Sponsors
+### 3. Melihat Detail Buku
+![Detail Buku](docs/detail-buku.png)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Dengan menekan ikon "Lihat" (mata) pada halaman koleksi, pengguna akan dibawa ke halaman detail buku.
+- Halaman ini menampilkan informasi buku secara lengkap beserta gambar cover dengan ukuran yang lebih besar.
+- Menampilkan data spesifik seperti penerbit, tahun terbit, sinopsis, tanggal data masuk, dan ID buku.
+- Dari halaman ini, pengguna dapat melakukan tindakan lebih lanjut seperti:
+  - **Edit Data**: Mengarahkan ke form pembaruan arsip.
+  - **Hapus**: Menghapus data buku dari sistem perpustakaan.
+  - **Kembali**: Kembali ke halaman utama (Koleksi).
 
-### Premium Partners
+### 4. Memperbarui Data Buku (Perbarui Arsip)
+![Form Perbarui Arsip](docs/perbarui-arsip.png)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Halaman ini dapat diakses melalui halaman detail buku atau langsung dari tombol aksi di halaman utama.
+- Berfungsi untuk memperbarui informasi literatur yang sudah ada di sistem.
+- Formulir akan otomatis terisi dengan data buku yang saat ini tersimpan (contoh: Sherlock Holmes, Sir. Arthur Conan Doyle, dll).
+- Pengguna dapat memodifikasi teks maupun mengganti cover literatur jika diperlukan.
+- Setelah data diperbarui, perubahan akan langsung tersimpan di database dan tampil di halaman Koleksi.
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+*Catatan: Pastikan untuk menyimpan screenshot gambar di dalam folder `docs/` di root proyek dengan nama file yang sesuai agar gambar dapat dirender dengan baik di README ini.*
